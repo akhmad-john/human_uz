@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
+
 INSTALLED_APPS = [
     #default apps
     'django.contrib.admin',
@@ -42,10 +45,16 @@ INSTALLED_APPS = [
     #3rd party apps
     'rest_framework',
     'tinymce',
-
+    'django_static_jquery_ui',
+    'django_tabbed_changeform_admin',
+    'fieldsets_with_inlines',
+    
     #custom apps
     'news',
 ]
+
+# TABBED_ADMIN_USE_JQUERY_UI = True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'humanuz_db',
         'USER': 'postgres',
-        'PASSWORD': 'GtBoud75ga',
+        'PASSWORD': 'Artel2019',
         'HOST': 'localhost',
         'PORT': 5432
     }

@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from django.utils.translation import gettext as _
 
 # Create your models here.
 
@@ -27,8 +28,15 @@ class SubCategory(models.Model):
 
 class Article(models.Model):
     main_image = models.ImageField(upload_to='main_images')
-    heading = models.CharField(max_length=50)
-    subheading = models.TextField()
+
+    ru_heading = models.CharField(max_length=50)
+    oz_heading = models.CharField(max_length=50)
+    uz_heading = models.CharField(max_length=50)
+
+    ru_subheading = models.TextField()
+    oz_subheading = models.TextField()
+    uz_subheading = models.TextField()
+
     sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
@@ -36,5 +44,9 @@ class Article(models.Model):
 
 class ContentBlock(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='content_blocks')
-    content =  HTMLField()
+    
+    ru_content =  HTMLField()
+    oz_content =  HTMLField()
+    uz_content =  HTMLField()
+
     block_image = models.ImageField(upload_to='images')
